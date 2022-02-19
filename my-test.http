@@ -1,0 +1,29 @@
+@Host = http://localhost:8080
+get {{Host}}
+###############################################################################################
+
+POST {{Host}}
+Content-Type: application/json
+
+{
+  "name": "test",
+  "description": "test",
+  "type": "test",
+  "url": "test",
+  "username": "test",
+  "password": "test",
+  "tags": [
+    "test"
+  ]
+}
+###
+
+get {{Host}}/user
+###
+post {{Host}}/user/69
+Content-Type: application/json
+
+{
+    "name": "manolo",
+    "age": "21"
+}
