@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port =8080;
+const path = require('path');
 
 app.use(express.json());
 
@@ -9,10 +10,11 @@ app.listen( port, () => {
 });
 
 app.get('/', (req, res) => {
-    res.send(console.log('hello world'));
+    //res.send(console.log('hello world'));
+    res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.get('/user/:id', (req, res) => {
+app.get('/user', (req, res) => {
     res.status(200).send({
         name: 'John',
         age: 30
